@@ -1,0 +1,136 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="entity"
+            type="com.target.targetcasestudy.domain.entity.ProductEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/deal_list_item_image_view"
+            android:layout_width="@dimen/deal_list_item_image_size"
+            android:layout_height="@dimen/deal_list_item_image_size"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:imageUri="@{entity.imageUrl}"
+            android:contentDescription="@string/content_description_item_image"
+            />
+
+        <TextView
+            android:id="@+id/deal_list_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/fontOnlyLight"
+            android:textSize="@dimen/font_size18"
+            android:textColor="@color/text_color_gray"
+            android:layout_marginStart="@dimen/layoutMargin10"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:layout_marginTop="@dimen/layoutMargin16"
+            app:layout_constraintStart_toEndOf="@+id/deal_list_item_image_view"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Junior's Boyfriend V Tee"
+            android:text="@{entity.title}"
+            />
+
+        <View
+            android:layout_marginTop="@dimen/layoutMargin16"
+            android:layout_marginStart="@dimen/layoutMargin10"
+            android:layout_width="0dp"
+            android:id="@+id/view_divider"
+            android:layout_height="@dimen/height1"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:background="@color/line_color_gray"
+            app:layout_constraintStart_toEndOf="@+id/deal_list_item_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/deal_list_item_title"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/deal_list_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_gray"
+            android:layout_marginStart="@dimen/layoutMargin10"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:layout_marginTop="@dimen/layoutMargin16"
+            app:layout_constraintStart_toEndOf="@+id/deal_list_item_image_view"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            tools:text="$9.00"
+            app:salePrice="@{entity.salePrice}"
+            app:regularPrice="@{entity.regularPrice}"
+            style="@style/fontOnlyLight"
+            android:textSize="@dimen/font_size18" />
+
+
+        <TextView
+            android:id="@+id/deal_list_item_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_red"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:layout_marginTop="@dimen/layoutMargin16"
+            android:padding="@dimen/layout_margin5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            android:background="@drawable/bg_round_gray"
+            tools:text="B2"
+            android:text="@{entity.aisle}"
+            android:textAllCaps="true"
+            android:textSize="@dimen/font_size14" />
+
+
+        <TextView
+            android:id="@+id/deal_list_item_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_gray"
+            android:layout_marginStart="@dimen/layoutMargin10"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:layout_marginTop="@dimen/layoutMargin22"
+            android:fontFamily="@font/roboto_light"
+            app:layout_constraintEnd_toStartOf="@+id/deal_list_item_type"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            tools:text="or"
+            android:text="@string/text_or"
+            style="@style/fontOnlyLight"
+            android:textSize="@dimen/font_size12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color_gray_dark"
+            android:layout_marginEnd="@dimen/layoutMargin10"
+            android:layout_marginTop="@dimen/layoutMargin22"
+            app:layout_constraintEnd_toStartOf="@+id/deal_list_item_or"
+            app:layout_constraintTop_toBottomOf="@+id/view_divider"
+            android:fontFamily="@font/roboto_regular"
+            tools:text="ship"
+            android:text="@string/text_ship"
+            style="@style/fontOnlyLight"
+            android:textSize="@dimen/font_size14" />
+
+
+        <View
+            android:layout_marginTop="@dimen/layoutMargin16"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height1"
+            android:background="@color/line_color_gray"
+            app:layout_constraintTop_toBottomOf="@+id/deal_list_item_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

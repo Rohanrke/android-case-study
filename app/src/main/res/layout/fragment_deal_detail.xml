@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.target.targetcasestudy.base.presentation.ProgressState" />
+
+        <variable
+            name="viewModel"
+            type="com.target.targetcasestudy.feature.deals.viewmodel.ProductViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/view_bottom">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/layoutMargin10">
+
+                <ImageView
+                    android:id="@+id/iv_item"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height400"
+                    android:contentDescription="@string/content_description_product_image"
+                    app:imageUri="@{viewModel.productData.imageUrl}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_sale_price"
+                    style="@style/fontOnlyLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMargin10"
+                    android:textColor="@color/red_color"
+                    android:textSize="@dimen/font_size24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_item"
+                    app:regularPrice="@{viewModel.productData.regularPrice}"
+                    app:salePrice="@{viewModel.productData.salePrice}"
+                    tools:text="$9.00" />
+
+                <TextView
+                    android:id="@+id/tv_regular_price_tag"
+                    style="@style/fontOnlyLight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_gray_dark"
+                    android:textSize="@dimen/font_size18"
+                    android:layout_marginTop="@dimen/layoutMargin10"
+                    app:layout_constraintEnd_toStartOf="@+id/view_regular_price"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_item"
+                    android:text="@string/tex_reg"
+                    android:visibility="gone"
+                    app:regularTagVisible="@{viewModel.productData.regularPrice}"
+                    tools:text="Reg: " />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/view_regular_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMargin10"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_item"
+                    app:regularTagVisible="@{viewModel.productData.regularPrice}"
+                    >
+
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="@dimen/height2"
+                        android:layout_centerInParent="true"
+                        android:background="@color/line_color_gray" />
+
+
+                    <TextView
+                        android:id="@+id/tv_regular_price"
+                        style="@style/fontOnlyLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_color_gray_dark"
+                        android:textSize="@dimen/font_size18"
+                        app:regularPrice="@{viewModel.productData.regularPrice}"
+                        tools:text="$17.99" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/fontOnlyRegular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMargin10"
+                    android:text="@{viewModel.productData.title}"
+                    android:textColor="@color/text_color_gray_dark"
+                    android:textSize="@dimen/font_size18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_sale_price"
+                    tools:text="Tiered Lace Tank - Lily Star" />
+
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    style="@style/fontOnlyRegular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/layoutMargin10"
+                    android:text="@{viewModel.productData.description}"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/font_size14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_title"
+                    tools:text="Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident laborum.
+r" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <ProgressBar
+            android:layout_width="@dimen/size50"
+            android:layout_height="@dimen/size50"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            app:visible="@{viewModel.state == ProgressState.LOADING}"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/view_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:weightSum="1">
+
+            <Button
+                style="@style/fontOnlyRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@color/circle_color_gray"
+                android:text="@string/text_add_to_list"
+                android:textColor="@android:color/black"
+                tools:text="add to list" />
+
+            <Button
+                style="@style/fontOnlyRegular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:background="@color/red_color"
+                android:text="@string/text_add_to_cart"
+                android:textColor="@android:color/white"
+                tools:text="add to cart" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

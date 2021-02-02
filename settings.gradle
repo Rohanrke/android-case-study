@@ -1,0 +1,5 @@
+include ':data'
+include ':di'
+include ':domain'
+include ':base'
+include ':app'

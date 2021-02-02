@@ -1,0 +1,22 @@
+<resources>
+  <string name="app_name">TargetCaseStudy</string>
+
+  <!-- Credit card validation strings. You do not need to make changes here. -->
+  <string name="credit_card_payment_title">Credit Card Payment</string>
+  <string name="credit_card_payment_subtitle">Note: you do NOT need to enter real data</string>
+  <string name="submit">Submit</string>
+  <string name="cancel">Cancel</string>
+  <string name="credit_card_number_hint">Credit card number</string>
+  <string name="text_ship">Ship</string>
+  <string name="text_or">or</string>
+  <string name="text_add_to_list">Add To List</string>
+  <string name="text_add_to_cart">Add To Cart</string>
+  <string name="text_deals">Deals</string>
+  <string name="text_details">Product Detail</string>
+  <string name="no_network">No Internet Available</string>
+  <string name="tex_reg">Reg: </string>
+
+
+  <string name="content_description_item_image">Deal Item Image</string>
+  <string name="content_description_product_image">Product Image</string>
+</resources>

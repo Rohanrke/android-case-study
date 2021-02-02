@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+<!--    font size-->
+    <dimen name="font_size14">14sp</dimen>
+    <dimen name="layout_margin5">5dp</dimen>
+    <dimen name="font_size12">12sp</dimen>
+    <dimen name="font_size16">16sp</dimen>
+    <dimen name="font_size17">17sp</dimen>
+    <dimen name="font_size18">18sp</dimen>
+    <dimen name="font_size8">8sp</dimen>
+    <dimen name="font_size9">9sp</dimen>
+    <dimen name="font_size10">10sp</dimen>
+    <dimen name="font_size20">20sp</dimen>
+    <dimen name="font_size24">24sp</dimen>
+    <dimen name="font_size28">28sp</dimen>
+    <dimen name="font_size34">34sp</dimen>
+
+
+    <!-- Margins -->
+    <dimen name="layoutMargin0">0dp</dimen>
+    <dimen name="layoutMargin2">2dp</dimen>
+    <dimen name="layoutMargin3">3dp</dimen>
+    <dimen name="layoutMargin4">4dp</dimen>
+    <dimen name="layoutMargin6">6dp</dimen>
+    <dimen name="layoutMargin8">8dp</dimen>
+    <dimen name="layoutMargin10">10dp</dimen>
+    <dimen name="layoutMargin11">11dp</dimen>
+    <dimen name="layoutMargin12">12dp</dimen>
+    <dimen name="layoutMargin14">14dp</dimen>
+    <dimen name="layoutMargin17">17dp</dimen>
+    <dimen name="layoutMargin15">15dp</dimen>
+    <dimen name="layoutMargin16">16dp</dimen>
+    <dimen name="layoutMargin22">22dp</dimen>
+
+    <!-- others -->
+    <dimen name="height1">1dp</dimen>
+    <dimen name="height2">2dp</dimen>
+    <dimen name="height400">400dp</dimen>
+
+    <dimen name="size50">50dp</dimen>
+
+
+
+</resources>

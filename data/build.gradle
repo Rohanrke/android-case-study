@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.+'
+
+    implementation(project(":domain"))
+
+    //Network
+    implementation deps.network.retrofit_core
+    implementation deps.network.retrofit_converter_gson
+    //Logging
+    implementation deps.logging.okhttp_logging_interceptor
+
+    testImplementation deps.mockk.core
+    testImplementation deps.mockk.android
+
+
+    implementation deps.coroutine.core
+    implementation deps.coroutine.android
+}
